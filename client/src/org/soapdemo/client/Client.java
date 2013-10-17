@@ -52,7 +52,7 @@ public class Client {
 
         SoapDemoWebService port = service.getSoapDemoWebServicePort();
 
-        // Добавляем специальный "логгер", который бедт записывать все SOAP сообщения
+        // Добавляем специальный "логгер", который будет записывать все SOAP сообщения
         addLogger(port);
 
         int k = -1;
@@ -71,7 +71,7 @@ public class Client {
             }
             switch (k) {
                 case 1:
-                    // Зарпашиваем с сервера список воздушных суден
+                    // Запрашиваем с сервера список воздушных суден
                     // и выводим его на экран
                     List<Aircraft> aircrafts = port.getAllAircrafts();
                     System.out.printf("%4s %15s %9s %4s\n", "id", "name", "price", "places");
@@ -80,7 +80,7 @@ public class Client {
                     }
                     break;
                 case 2:
-                    // Зарпашиваем с сервера список аэропортов
+                    // Запрашиваем с сервера список аэропортов
                     // и выводим его на экран
                     List<Airport> airports = port.getAllAirports();
                     System.out.printf("%4s %15s %4s\n", "id", "name", "city");

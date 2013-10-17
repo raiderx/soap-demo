@@ -66,7 +66,7 @@ public class Server {
             logger.log(Level.INFO, String.format("Listen on address %s and port %d\n", settings.getAddress(), settings.getPort()));
             // Останавливаем основной поток приложения
             // Это необходимо, чтобы приложение не закрывало соединение с базой
-            // данных сразу после публиуации веб-службы
+            // данных сразу после публикации веб-службы
             while (true) {
                 Thread.sleep(1000);
             }
