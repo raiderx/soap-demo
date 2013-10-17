@@ -46,7 +46,7 @@ public class AircraftDaoJdbcImpl implements AircraftDao {
             logger.log(Level.SEVERE, e.getMessage(), e);
             throw new ApplicationException(e.getMessage(), e);
         } finally {
-            close(statement, resultSet);
+            JdbcUtils.close(statement, resultSet);
         }
         return result;
     }
@@ -60,19 +60,5 @@ public class AircraftDaoJdbcImpl implements AircraftDao {
         result.setMarkup1(resultSet.getBigDecimal("MARKUP1_TBAT"));
         result.setMarkupB(resultSet.getBigDecimal("MARKUPB_TBAT"));
         return result;
-    }
-
-    private void close(Statement statement, ResultSet resultSet) {
-        try {
-            if (statement != null) {
-                statement.close();
-            }
-            if (resultSet != null) {
-                resultSet.close();
-            }
-        } catch (SQLException e) {
-            logger.log(Level.SEVERE, e.getMessage(), e);
-            throw new ApplicationException(e.getMessage(), e);
-        }
     }
 }

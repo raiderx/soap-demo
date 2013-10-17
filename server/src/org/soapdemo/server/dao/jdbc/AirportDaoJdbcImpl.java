@@ -46,7 +46,7 @@ public class AirportDaoJdbcImpl implements AirportDao {
             logger.log(Level.SEVERE, e.getMessage(), e);
             throw new ApplicationException(e.getMessage(), e);
         } finally {
-            close(statement, resultSet);
+            JdbcUtils.close(statement, resultSet);
         }
         return result;
     }
@@ -57,19 +57,5 @@ public class AirportDaoJdbcImpl implements AirportDao {
         result.setName(resultSet.getString("NAME_TBAP"));
         result.setCityId(resultSet.getLong("ID_CITY_TBAP"));
         return result;
-    }
-
-    private void close(Statement statement, ResultSet resultSet) {
-        try {
-            if (statement != null) {
-                statement.close();
-            }
-            if (resultSet != null) {
-                resultSet.close();
-            }
-        } catch (SQLException e) {
-            logger.log(Level.SEVERE, e.getMessage(), e);
-            throw new ApplicationException(e.getMessage(), e);
-        }
     }
 }
