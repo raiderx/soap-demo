@@ -11,6 +11,7 @@ import java.util.Set;
 /**
  * Обработчик SOAP сообщений
  * Записывает сообщения в System.out
+ * @author Pavel Karpukhin
  * @since 25.06.13
  */
 public class LoggingHandler implements SOAPHandler<SOAPMessageContext> {

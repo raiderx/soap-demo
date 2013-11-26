@@ -11,6 +11,7 @@ import java.util.List;
 
 /**
  * Web service
+ * @author Pavel Karpukhin
  * @since 25.06.13
  */
 @WebService

@@ -20,7 +20,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * @author Pavel Karpukhin
  * @since 25.06.13
  */
 public class Server {

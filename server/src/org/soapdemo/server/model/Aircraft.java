@@ -3,7 +3,7 @@ package org.soapdemo.server.model;
 import java.math.BigDecimal;
 
 /**
- *
+ * @author Pavel Karpukhin
  * @since 25.06.13
  */
 public class Aircraft extends Entity {
