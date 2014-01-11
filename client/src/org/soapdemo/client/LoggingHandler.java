@@ -47,7 +47,7 @@ public class LoggingHandler implements SOAPHandler<SOAPMessageContext> {
         Boolean outboundProperty = (Boolean)
                 smc.get (MessageContext.MESSAGE_OUTBOUND_PROPERTY);
 
-        if (outboundProperty.booleanValue()) {
+        if (outboundProperty) {
             stream.println("Request:");
         } else {
             stream.println("Response:");
